@@ -29,46 +29,6 @@ body {
     background-color: white;
 }
 
-.num {
-    width: 40px;
-    height: 50px;
-    text-align: center;
-    font-weight: bold;
-    background-color: var(--cor01);
-    color: var(--cor05);
-    border-top: 5px solid var(--cor01);
-    border-bottom: 5px solid var(--cor04);
-}
-
-.numesq {
-    margin-left: 3px;
-    margin-right: 3px;
-}
-
-.numdir {
-    margin-right: 3px;
-}
-
-.num:active {
-    border-top: 5px solid var(--cor00);
-    border-bottom: 5px solid var(--cor01);
-}
-
-.linha {
-    width: 169px;
-    height: 50px;
-    background-color: var(--cor00);
-}
-
-.linhacima {
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-
-.linhabaixo {
-    margin-bottom: 3px;
-}
-
 #base {
     position: absolute;
     top: 50%;
@@ -119,6 +79,47 @@ body {
     padding: 0px 4px 4px 4px;
     border-radius: 5px;
     background-color: var(--cor00);
+}
+
+.linha {
+    width: 169px;
+    height: 50px;
+    background-color: var(--cor00);
+}
+
+.linhacima {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.linhabaixo {
+    margin-bottom: 3px;
+}
+
+.num {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--cor01);
+    color: var(--cor05);
+    border-top: 5px solid var(--cor01);
+    border-bottom: 5px solid var(--cor04);
+}
+
+.numesq {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.numdir {
+    margin-right: 3px;
+}
+
+.num:active {
+    border-top: 5px solid var(--cor00);
+    border-bottom: 5px solid var(--cor01);
 }
 
 #equaltxt {
