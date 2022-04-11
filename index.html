@@ -72,6 +72,8 @@
         minus.addEventListener('click', clicarminus);
         equal.addEventListener('mousedown', clicarequaldown);
         equal.addEventListener('mouseup', clicarequalup);
+        equal.addEventListener('touchstart', touchstart);
+        equal.addEventListener('touchend', touchend);
 
         var a;
 
@@ -172,6 +174,14 @@
             document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
         }
         function clicarequalup() {
+            txt.innerHTML = ' '
+            document.querySelector('#equaltxt').innerText = ' '
+        }
+        function touchstart() {
+            txt.innerText = ' '
+            document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
+        }
+        function touchend() {
             txt.innerHTML = ' '
             document.querySelector('#equaltxt').innerText = ' '
         }
