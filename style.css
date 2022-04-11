@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+:root {
+    --cor00: #3d3d3d;
+    --cor01: #636363;
+    --cor02: #7D7D7D;
+    --cor03: #9C9C9C;
+    --cor04: #B5B5B5;
+    --cor05: #D1D1D1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+head, script {
+    display: none;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+
+.num {
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--cor01);
+    color: var(--cor05);
+    border-top: 5px solid var(--cor01);
+    border-bottom: 5px solid var(--cor04);
+}
+
+.numesq {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.numdir {
+    margin-right: 3px;
+}
+
+.num:active {
+    border-top: 5px solid var(--cor00);
+    border-bottom: 5px solid var(--cor01);
+}
+
+.linha {
+    width: 169px;
+    height: 50px;
+    background-color: var(--cor00);
+}
+
+.linhacima {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.linhabaixo {
+    margin-bottom: 3px;
+}
+
+#base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 197px;
+    height: 328px;
+    background-color: var(--cor04);
+    padding: 20px 10px 20px 10px;
+    border-radius: 10px;
+    border-bottom: 5px solid var(--cor05);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#vidro {
+    position: relative;
+    width: 177px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--cor00);
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+#vidro2 {
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 50px;
+    background-color: var(--cor00);
+    border-radius: 10px 0px 0px 10px;
+    z-index: 2;
+}
+
+#txt {
+    position: absolute;
+    right: 0;
+    line-height: 50px;
+    font-size: 1.3em;
+    color: white;
+    word-break: keep-all;
+    z-index: 1;
+}
+
+#fundo {
+    width: 177px;
+    height: 213px;
+    padding: 0px 4px 4px 4px;
+    border-radius: 5px;
+    background-color: var(--cor00);
+}
+
+#equaltxt {
+    position: absolute;
+    left: 10px;
+    line-height: 50px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    word-break: keep-all;
+    z-index: 0;
+}

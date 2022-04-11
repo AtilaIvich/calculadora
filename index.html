@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="base">
+
+            <div id="vidro">
+                <div id="vidro2"></div>
+                <p id="txt"></p>
+                <p id="equaltxt"></p>
+            </div>
+
+            <div id="fundo">
+                <div class="linha">
+                    <div class="num" id="n1">1</div><div class="num numesq" id="n2">2</div><div class="num numdir" id="n3">3</div><div class="num" id="AC">AC</div>
+                </div>
+
+                <div class="linha linhacima">
+                    <div class="num" id="n4">4</div><div class="num numesq" id="n5">5</div><div class="num numdir" id="n6">6</div><div class="num" id="multiply">*</div>
+                </div>
+
+                <div class="linha linhabaixo">
+                    <div class="num" id="n7">7</div><div class="num numesq" id="n8">8</div><div class="num numdir" id="n9">9</div><div class="num" id="divide">/</div>
+                </div>
+
+                <div class="linha">
+                    <div class="num" id="plus">+</div><div class="num numesq" id="n0">0</div><div class="num numdir" id="minus">-</div><div class="num" id="equal">=</div>
+                </div> <!-- /linha -->
+            </div> <!-- /fundo -->
+        </div> <!-- /base -->
+    </body>
+
+    <script>
+        
+        const txt = document.querySelector('#txt');
+        const n1 = document.querySelector('#n1');
+        const n2 = document.querySelector('#n2');
+        const n3 = document.querySelector('#n3');
+        const AC = document.querySelector('#AC');
+        const n4 = document.querySelector('#n4');
+        const n5 = document.querySelector('#n5');
+        const n6 = document.querySelector('#n6');
+        const multiply = document.querySelector('#multiply');
+        const n7 = document.querySelector('#n7');
+        const n8 = document.querySelector('#n8');
+        const n9 = document.querySelector('#n9');
+        const divide = document.querySelector('#divide');
+        const plus = document.querySelector('#plus');
+        const n0 = document.querySelector('#n0');
+        const minus = document.querySelector('#minus');
+        const equal = document.querySelector('#equal');
+
+        n1.addEventListener('click', clicar1);
+        n2.addEventListener('click', clicar2);
+        n3.addEventListener('click', clicar3);
+        AC.addEventListener('click', clicarAC);
+        n4.addEventListener('click', clicar4);
+        n5.addEventListener('click', clicar5);
+        n6.addEventListener('click', clicar6);
+        multiply.addEventListener('click', clicarmultiply);
+        n7.addEventListener('click', clicar7);
+        n8.addEventListener('click', clicar8);
+        n9.addEventListener('click', clicar9);
+        divide.addEventListener('click', clicardivide);
+        plus.addEventListener('click', clicarplus);
+        n0.addEventListener('click', clicar0);
+        minus.addEventListener('click', clicarminus);
+        equal.addEventListener('mousedown', clicarequaldown);
+        equal.addEventListener('mouseup', clicarequalup);
+
+        var a;
+
+        function clicar1() {
+            txt.innerText += '1';
+        }
+        function clicar2() {
+            txt.innerText += '2';
+        }
+        function clicar3() {
+            txt.innerText += '3';
+        }
+        function clicarAC() {
+            txt.innerText = ' ';
+            window.a = 'a'
+            window.b = 'a'
+        }
+        function clicar4() {
+            txt.innerText += '4';
+        }
+        function clicar5() {
+            txt.innerText += '5';
+        }
+        function clicar6() {
+            txt.innerText += '6';
+        }
+        function clicarmultiply() {
+            bgcolor = '#ff0000'
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
+            txt.innerText = ' ';
+            }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a * b
+                a = 'a'
+                b = 'a'
+            }
+        }
+        function clicar7() {
+            txt.innerText += '7';
+        }
+        function clicar8() {
+            txt.innerText += '8';
+        }
+        function clicar9() {
+            txt.innerText += '9';
+        }
+        function clicardivide() {
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
+            txt.innerText = ' ';
+            }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a / b
+                a = 'a'
+                b = 'a'
+            }
+        }
+        function clicarplus() {
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
+            txt.innerText = ' ';
+            }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a + b
+                a = 'a'
+                b = 'a'
+            }
+        }
+        function clicar0() {
+            txt.innerText += '0';
+        }
+        function clicarminus() {
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
+            txt.innerText = ' ';
+            }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a - b
+                a = 'a'
+                b = 'a'
+            }
+        }
+        function clicarequaldown() {
+            txt.innerText = ' '
+            document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
+        }
+        function clicarequalup() {
+            txt.innerHTML = ' '
+            document.querySelector('#equaltxt').innerText = ' '
+        }
+    </script>
+</html>
