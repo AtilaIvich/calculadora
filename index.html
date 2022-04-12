@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <h1 style="display:block; padding: 20px;">Primeira versão da calculadora</h1>
+        <p style="padding: 0px 20px 20px 20px;">Para acessar a nova versão, clique <a href="calculadoraV2.html" rel="next" target="_self">aqui</a></p>
+
         <div id="base">
 
             <div id="vidro">
@@ -70,7 +73,10 @@
         plus.addEventListener('click', clicarplus);
         n0.addEventListener('click', clicar0);
         minus.addEventListener('click', clicarminus);
-        equal.addEventListener('click', clicarequal);
+        equal.addEventListener('mousedown', clicarequaldown);
+        equal.addEventListener('mouseup', clicarequalup);
+        equal.addEventListener('touchstart', touchstart);
+        equal.addEventListener('touchend', touchend);
 
         var a;
 
@@ -98,9 +104,19 @@
             txt.innerText += '6';
         }
         function clicarmultiply() {
-            window.a = txt.innerText;
-            a = a + 'c'
-            txt.innerText = ' '
+            bgcolor = '#ff0000'
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
+            txt.innerText = ' ';
+            }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a * b
+                a = 'a'
+                b = 'a'
+            }
         }
         function clicar7() {
             txt.innerText += '7';
@@ -112,52 +128,65 @@
             txt.innerText += '9';
         }
         function clicardivide() {
-            window.a = txt.innerText;
-            a = a + 'd'
-            txt.innerText = ' '
-        }
-        function clicarplus() {
-            window.a = txt.innerText;
-            a = a + 'a';
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
             txt.innerText = ' ';
             }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a / b
+                a = 'a'
+                b = 'a'
+            }
+        }
+        function clicarplus() {
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
+            txt.innerText = ' ';
+            }
+            else {
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a + b
+                a = 'a'
+                b = 'a'
+            }
+        }
         function clicar0() {
             txt.innerText += '0';
         }
         function clicarminus() {
-            window.a = txt.innerText;
-            a = a + 'b';
+            if (isNaN(a)) {
+            window.a = txt.innerText
+            a = Number(a)
             txt.innerText = ' ';
-        }
-        function clicarequal() {
-            var b = txt.innerText;
-            b = Number(b);
-            if (a.includes('a')) {
-                a = a.replace('a', ' ');
-                a = Number(a);
-                txt.innerText = a + b;
             }
             else {
-                if (a.includes('b')) {
-                    a = a.replace('b', ' ');
-                    a = Number(a);
-                    txt.innerText = a - b;
-                }
-                else {
-                    if (a.includes('c')) {
-                    a = a.replace('c', ' ');
-                    a = Number(a);
-                    txt.innerText = a * b;
-                    }
-                    else {
-                        if (a.includes('d')) {
-                        a = a.replace('d', ' ');
-                        a = Number(a);
-                        txt.innerText = a / b;
-                    }
-                }
+                window.b = txt.innerText
+                b = Number(b)
+                txt.innerText = a - b
+                a = 'a'
+                b = 'a'
             }
         }
-    }
+        function clicarequaldown() {
+            txt.innerText = ' '
+            document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
+        }
+        function clicarequalup() {
+            txt.innerHTML = ' '
+            document.querySelector('#equaltxt').innerText = ' '
+        }
+        function touchstart() {
+            txt.innerText = ' '
+            document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
+        }
+        function touchend() {
+            txt.innerHTML = ' '
+            document.querySelector('#equaltxt').innerText = ' '
+        }
     </script>
 </html>
