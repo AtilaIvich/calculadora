@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>Calculadora</title>
+        <title>Calculator</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h2 style="display:block; padding: 20px; text-align: center;">Primeira versão da calculadora</h1>
-        <p style="position:absolute; bottom: 0; left: 0; padding-bottom:10px; padding-left: 20px;"><small>Para acessar a segunda versão, clique <a href="calculadoraV2.html" rel="next" target="_self">aqui</a> <br> Para acessar a terceira versão, clique <a href="v3/calculadoraV3.html" rel="next" target="_self">aqui</a></small></p>
+        <h2 style="display:block; padding: 20px; text-align: center;">Calculator first version</h1>
+        <p style="position:absolute; bottom: 0; left: 0; padding-bottom:10px; padding-left: 20px;"><small>To access the second version, <a href="calculatorV2.html" rel="next" target="_self">click here</a><br>To access the third version, <a href="v3/index.html" rel="next" target="_self">click here</a></small></p>
 
         <div id="base">
 
-            <div id="vidro">
-                <div id="vidro2"></div>
-                <p id="txt"></p>
+            <div id="resultcontainer">
+                <div id="resultbar"></div>
+                <p id="result"></p>
                 <p id="equaltxt"></p>
             </div>
 
-            <div id="fundo">
-                <div class="linha">
-                    <div class="num" id="n1">1</div><div class="num numesq" id="n2">2</div><div class="num numdir" id="n3">3</div><div class="num" id="AC">AC</div>
+            <div id="numbg">
+                <div class="numline">
+                    <div class="num" id="n1">1</div><div class="num numleft" id="n2">2</div><div class="num numright" id="n3">3</div><div class="num" id="AC">AC</div>
                 </div>
 
-                <div class="linha linhacima">
-                    <div class="num" id="n4">4</div><div class="num numesq" id="n5">5</div><div class="num numdir" id="n6">6</div><div class="num" id="multiply">*</div>
+                <div class="numline line2">
+                    <div class="num" id="n4">4</div><div class="num numleft" id="n5">5</div><div class="num numright" id="n6">6</div><div class="num" id="multiply">*</div>
                 </div>
 
-                <div class="linha linhabaixo">
-                    <div class="num" id="n7">7</div><div class="num numesq" id="n8">8</div><div class="num numdir" id="n9">9</div><div class="num" id="divide">/</div>
+                <div class="numline line3">
+                    <div class="num" id="n7">7</div><div class="num numleft" id="n8">8</div><div class="num numright" id="n9">9</div><div class="num" id="divide">/</div>
                 </div>
 
-                <div class="linha">
-                    <div class="num" id="plus">+</div><div class="num numesq" id="n0">0</div><div class="num numdir" id="minus">-</div><div class="num" id="equal">=</div>
-                </div> <!-- /linha -->
-            </div> <!-- /fundo -->
+                <div class="numline">
+                    <div class="num" id="plus">+</div><div class="num numleft" id="n0">0</div><div class="num numright" id="minus">-</div><div class="num" id="equal">=</div>
+                </div> <!-- /numline -->
+            </div> <!-- /numbg -->
         </div> <!-- /base -->
     </body>
 
     <script>
         
-        const txt = document.querySelector('#txt');
+        const res = document.querySelector('#result');
         const n1 = document.querySelector('#n1');
         const n2 = document.querySelector('#n2');
         const n3 = document.querySelector('#n3');
@@ -81,111 +81,111 @@
         var a;
 
         function clicar1() {
-            txt.innerText += '1';
+            res.innerText += '1';
         }
         function clicar2() {
-            txt.innerText += '2';
+            res.innerText += '2';
         }
         function clicar3() {
-            txt.innerText += '3';
+            res.innerText += '3';
         }
         function clicarAC() {
-            txt.innerText = ' ';
+            res.innerText = ' ';
             window.a = 'a'
             window.b = 'a'
         }
         function clicar4() {
-            txt.innerText += '4';
+            res.innerText += '4';
         }
         function clicar5() {
-            txt.innerText += '5';
+            res.innerText += '5';
         }
         function clicar6() {
-            txt.innerText += '6';
+            res.innerText += '6';
         }
         function clicarmultiply() {
             bgcolor = '#ff0000'
             if (isNaN(a)) {
-            window.a = txt.innerText
+            window.a = res.innerText
             a = Number(a)
-            txt.innerText = ' ';
+            res.innerText = ' ';
             }
             else {
-                window.b = txt.innerText
+                window.b = res.innerText
                 b = Number(b)
-                txt.innerText = a * b
+                res.innerText = a * b
                 a = 'a'
                 b = 'a'
             }
         }
         function clicar7() {
-            txt.innerText += '7';
+            res.innerText += '7';
         }
         function clicar8() {
-            txt.innerText += '8';
+            res.innerText += '8';
         }
         function clicar9() {
-            txt.innerText += '9';
+            res.innerText += '9';
         }
         function clicardivide() {
             if (isNaN(a)) {
-            window.a = txt.innerText
+            window.a = res.innerText
             a = Number(a)
-            txt.innerText = ' ';
+            res.innerText = ' ';
             }
             else {
-                window.b = txt.innerText
+                window.b = res.innerText
                 b = Number(b)
-                txt.innerText = a / b
+                res.innerText = a / b
                 a = 'a'
                 b = 'a'
             }
         }
         function clicarplus() {
             if (isNaN(a)) {
-            window.a = txt.innerText
+            window.a = res.innerText
             a = Number(a)
-            txt.innerText = ' ';
+            res.innerText = ' ';
             }
             else {
-                window.b = txt.innerText
+                window.b = res.innerText
                 b = Number(b)
-                txt.innerText = a + b
+                res.innerText = a + b
                 a = 'a'
                 b = 'a'
             }
         }
         function clicar0() {
-            txt.innerText += '0';
+            res.innerText += '0';
         }
         function clicarminus() {
             if (isNaN(a)) {
-            window.a = txt.innerText
+            window.a = res.innerText
             a = Number(a)
-            txt.innerText = ' ';
+            res.innerText = ' ';
             }
             else {
-                window.b = txt.innerText
+                window.b = res.innerText
                 b = Number(b)
-                txt.innerText = a - b
+                res.innerText = a - b
                 a = 'a'
                 b = 'a'
             }
         }
         function clicarequaldown() {
-            txt.innerText = ' '
-            document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
+            res.innerText = ' '
+            document.querySelector('#equaltxt').innerText = "equal doesn't work lol"
         }
         function clicarequalup() {
-            txt.innerHTML = ' '
+            res.innerHTML = ' '
             document.querySelector('#equaltxt').innerText = ' '
         }
         function touchstart() {
-            txt.innerText = ' '
-            document.querySelector('#equaltxt').innerText = 'o igual n faz ndkkk'
+            res.innerText = ' '
+            document.querySelector('#equaltxt').innerText = "equal doesn't work lol"
         }
         function touchend() {
-            txt.innerHTML = ' '
+            res.innerHTML = ' '
             document.querySelector('#equaltxt').innerText = ' '
         }
     </script>

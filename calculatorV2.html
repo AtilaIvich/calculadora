@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>Calculadora</title>
+        <title>Calculator v2</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="base">
 
-            <div id="vidro">
-                <div id="vidro2"></div>
-                <p id="txt"></p>
+            <div id="resultcontainer">
+                <div id="resultbar"></div>
+                <p id="result"></p>
                 <p id="equaltxt"></p>
             </div>
 
-            <div id="fundo">
-                <div class="linha">
-                    <div class="num" id="n1">1</div><div class="num numesq" id="n2">2</div><div class="num numdir" id="n3">3</div><div class="num" id="AC">AC</div>
+            <div id="numbg">
+                <div class="numline">
+                    <div class="num" id="n1">1</div><div class="num numleft" id="n2">2</div><div class="num numright" id="n3">3</div><div class="num" id="AC">AC</div>
                 </div>
 
-                <div class="linha linhacima">
-                    <div class="num" id="n4">4</div><div class="num numesq" id="n5">5</div><div class="num numdir" id="n6">6</div><div class="num" id="multiply">*</div>
+                <div class="numline line2">
+                    <div class="num" id="n4">4</div><div class="num numleft" id="n5">5</div><div class="num numright" id="n6">6</div><div class="num" id="multiply">*</div>
                 </div>
 
-                <div class="linha linhabaixo">
-                    <div class="num" id="n7">7</div><div class="num numesq" id="n8">8</div><div class="num numdir" id="n9">9</div><div class="num" id="divide">/</div>
+                <div class="numline line3">
+                    <div class="num" id="n7">7</div><div class="num numleft" id="n8">8</div><div class="num numright" id="n9">9</div><div class="num" id="divide">/</div>
                 </div>
 
-                <div class="linha">
-                    <div class="num" id="plus">+</div><div class="num numesq" id="n0">0</div><div class="num numdir" id="minus">-</div><div class="num" id="equal">=</div>
-                </div> <!-- /linha -->
-            </div> <!-- /fundo -->
+                <div class="numline">
+                    <div class="num" id="plus">+</div><div class="num numleft" id="n0">0</div><div class="num numright" id="minus">-</div><div class="num" id="equal">=</div>
+                </div> <!-- /numline -->
+            </div> <!-- /numbg -->
         </div> <!-- /base -->
     </body>
 
     <script>
         
-        const txt = document.querySelector('#txt');
+        const res = document.querySelector('#result');
         const n1 = document.querySelector('#n1');
         const n2 = document.querySelector('#n2');
         const n3 = document.querySelector('#n3');
@@ -75,85 +75,85 @@
         var a;
 
         function clicar1() {
-            txt.innerText += '1';
+            res.innerText += '1';
         }
         function clicar2() {
-            txt.innerText += '2';
+            res.innerText += '2';
         }
         function clicar3() {
-            txt.innerText += '3';
+            res.innerText += '3';
         }
         function clicarAC() {
-            txt.innerText = ' ';
-            window.a = 'a'
-            window.b = 'a'
+            res.innerText = ' ';
+            a = 'a'
+            b = 'a'
         }
         function clicar4() {
-            txt.innerText += '4';
+            res.innerText += '4';
         }
         function clicar5() {
-            txt.innerText += '5';
+            res.innerText += '5';
         }
         function clicar6() {
-            txt.innerText += '6';
+            res.innerText += '6';
         }
         function clicarmultiply() {
-            window.a = txt.innerText;
+            a = res.innerText;
             a = a + 'c'
-            txt.innerText = ' '
+            res.innerText = ' '
         }
         function clicar7() {
-            txt.innerText += '7';
+            res.innerText += '7';
         }
         function clicar8() {
-            txt.innerText += '8';
+            res.innerText += '8';
         }
         function clicar9() {
-            txt.innerText += '9';
+            res.innerText += '9';
         }
         function clicardivide() {
-            window.a = txt.innerText;
+            a = res.innerText;
             a = a + 'd'
-            txt.innerText = ' '
+            res.innerText = ' '
         }
         function clicarplus() {
-            window.a = txt.innerText;
+            a = res.innerText;
             a = a + 'a';
-            txt.innerText = ' ';
+            res.innerText = ' ';
             }
         function clicar0() {
-            txt.innerText += '0';
+            res.innerText += '0';
         }
         function clicarminus() {
-            window.a = txt.innerText;
+            a = res.innerText;
             a = a + 'b';
-            txt.innerText = ' ';
+            res.innerText = ' ';
         }
         function clicarequal() {
-            var b = txt.innerText;
+            var b = res.innerText;
             b = Number(b);
             if (a.includes('a')) {
                 a = a.replace('a', ' ');
                 a = Number(a);
-                txt.innerText = a + b;
+                res.innerText = a + b;
             }
             else {
                 if (a.includes('b')) {
                     a = a.replace('b', ' ');
                     a = Number(a);
-                    txt.innerText = a - b;
+                    res.innerText = a - b;
                 }
                 else {
                     if (a.includes('c')) {
                     a = a.replace('c', ' ');
                     a = Number(a);
-                    txt.innerText = a * b;
+                    res.innerText = a * b;
                     }
                     else {
                         if (a.includes('d')) {
                         a = a.replace('d', ' ');
                         a = Number(a);
-                        txt.innerText = a / b;
+                        res.innerText = a / b;
                     }
                 }
             }

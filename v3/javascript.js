@@ -1,4 +1,4 @@
-const txt = document.getElementById('txt');
+const res = document.getElementById('result');
 
 const n1 = document.getElementById('n1');
 const n2 = document.getElementById('n2');
@@ -42,11 +42,11 @@ var a;
 var b;
 
 function click(n) {
-    txt.innerHTML += String(n);
+    res.innerHTML += String(n);
 }
 
 function reset() {
-    txt.innerText = '';
+    res.innerText = '';
     numArray = [];
     a = 'a';
     b = 'a';
@@ -57,11 +57,11 @@ function fPlus() {
     key = 1;
 
     if (isNaN(numArray[0])) {
-        numArray[0] = Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] = Number(res.innerText);
+        res.innerText = '';
     } else {
-        numArray[0] += Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] += Number(res.innerText);
+        res.innerText = '';
     }
 }
 
@@ -69,11 +69,11 @@ function fMinus() {
     key = 2;
 
     if (isNaN(numArray[0])) {
-        numArray[0] = Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] = Number(res.innerText);
+        res.innerText = '';
     } else {
-        numArray[0] -= Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] -= Number(res.innerText);
+        res.innerText = '';
     }
 }
 
@@ -81,11 +81,11 @@ function fMultiply() {
     key = 3;
 
     if (isNaN(numArray[0])) {
-        numArray[0] = Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] = Number(res.innerText);
+        res.innerText = '';
     } else {
-        numArray[0] *= Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] *= Number(res.innerText);
+        res.innerText = '';
     }
 }
 
@@ -93,53 +93,53 @@ function fDivide() {
     key = 4;
 
     if (isNaN(numArray[0])) {
-        numArray[0] = Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] = Number(res.innerText);
+        res.innerText = '';
     } else {
-        numArray[0] /= Number(txt.innerText);
-        txt.innerText = '';
+        numArray[0] /= Number(res.innerText);
+        res.innerText = '';
     }
 }
 
 function fEqual() {
-    b = Number(txt.innerText);
+    b = Number(res.innerText);
 
     if (key == 1) {
         if (Number.isInteger(numArray[0] + b)) {
-            txt.innerText = numArray[0] + b;
+            res.innerText = numArray[0] + b;
             numArray[0] = 'a';
         } else {
-            txt.innerText = (numArray[0] + b).toFixed(8);
+            res.innerText = (numArray[0] + b).toFixed(8);
             numArray[0] = 'a';
         }
     }
 
     if (key == 2) {
         if (Number.isInteger(numArray[0] - b)) {
-            txt.innerText = numArray[0] - b;
+            res.innerText = numArray[0] - b;
             numArray[0] = 'a';
         } else {
-            txt.innerText = (numArray[0] - b).toFixed(8);
+            res.innerText = (numArray[0] - b).toFixed(8);
             numArray[0] = 'a';
         }
     }
 
     if (key == 3) {
         if (Number.isInteger(numArray[0] * b)) {
-            txt.innerText = numArray[0] * b;
+            res.innerText = numArray[0] * b;
             numArray[0] = 'a';
         } else {
-            txt.innerText = (numArray[0] * b).toFixed(8);
+            res.innerText = (numArray[0] * b).toFixed(8);
             numArray[0] = 'a';
         }
     }
 
     if (key == 4) {
         if (Number.isInteger(numArray[0] / b)) {
-            txt.innerText = numArray[0] / b;
+            res.innerText = numArray[0] / b;
             numArray[0] = 'a';
         } else {
-            txt.innerText = (numArray[0] / b).toFixed(8);
+            res.innerText = (numArray[0] / b).toFixed(8);
             numArray[0] = 'a';
         }
     }
